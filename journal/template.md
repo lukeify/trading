@@ -2,7 +2,7 @@
 
 ## News & Summary
 
-![SPX Chart](./images/charts/)
+![SPX Chart](../images/charts/)
 
 ## Selected Tickers
 
@@ -10,27 +10,27 @@
 
 Identified from: 
 
-| Key        | Value |
-| ---------- | ----- |
-| Market Cap |       |
-| Float      |       |
-| Volume     |       |
-| ATR        |       |
+| Key         | Value | Classification | Source |
+| ----------- | ----- | -------------- | ------ |
+| Market Cap. |       |                |        |
+| Float       |       |                |        |
+| Avg. Volume |       |                |        |
+| ATR         |       |                |        |
 
-![TCKRA Chart](./images/charts/)
+![TCKRA Chart](../images/charts/)
 
 ### TCKRB
 
 Identified from:
 
-| Key        | Value |
-| ---------- | ----- |
-| Market Cap |       |
-| Float      |       |
-| Volume     |       |
-| ATR        |       |
+| Key         | Value | Classification | Source |
+| ----------- | ----- | -------------- | ------ |
+| Market Cap. |       |                |        |
+| Float       |       |                |        |
+| Avg. Volume |       |                |        |
+| ATR         |       |                |        |
 
-![TCKRB Chart](./images/charts/)
+![TCKRB Chart](../images/charts/)
 
 ## Trades
 
@@ -42,9 +42,9 @@ Entries:
 Exits:
 - Exit
 
-P&L:
+P&L (%):
 
-![Trade Chart](./images/trades/)
+![Trade Chart](../images/trades/)
 
 ## What went right?
 
