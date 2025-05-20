@@ -11,24 +11,26 @@
 Identified from: 
 
 | Key        | Value |
-|------------|-------|
-| Float      |       |
+| ---------- | ----- |
 | Market Cap |       |
+| Float      |       |
+| Volume     |       |
 | ATR        |       |
 
-![TCKRA Chart](.//images/charts/)
+![TCKRA Chart](./images/charts/)
 
 ### TCKRB
 
 Identified from:
 
 | Key        | Value |
-|------------|-------|
-| Float      |       |
+| ---------- | ----- |
 | Market Cap |       |
+| Float      |       |
+| Volume     |       |
 | ATR        |       |
 
-![TCKRB Chart](.//images/charts/)
+![TCKRB Chart](./images/charts/)
 
 ## Trades
 
@@ -42,7 +44,7 @@ Exits:
 
 P&L:
 
-![Trade Chart](.//images/trades/)
+![Trade Chart](./images/trades/)
 
 ## What went right?
 
