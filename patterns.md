@@ -3,34 +3,39 @@
 ## ABCD Pattern
 
 A pattern involving identifying four points on a chart. The legs between the four points represent different movements in the price action:
-- Leg AB = The start of the pattern, the price moves upwards on an initial trend, often a catalyst such as news or start of trading. Point B marks a high where the pullback begins. This will have high volume.
-- Leg BC = Retracement of the initial move from Point B, often in a Fibonacci-pattern where the retracement ends—Point C—above Point A. This will have lower volume than the previous leg.
-- Leg CD = A continuation of the original trend, aiming to break past support or resistance. This is often where you buy in.
 
-After point D, if successful will usually have very high volume.
+- **Leg AB** = The start of the pattern, the price moves upwards **strongly** on an initial trend, often a catalyst such as news or start of trading. Point B marks a high where the pullback begins, it can cause a *new high of day*. This move will have high volume.
+- **Leg BC** = Light pullback causes the price to move downwards from Point B to Point C in a less aggressive manner than the previous leg, with less volume. Point C will always be above Point A, and often in a *Fibonacci ratio* such as 0.236, 0.382, 0.618. This will have lower volume than the previous leg.
+- **Leg CD** = A continuation of the original trend, aiming to break past support or resistance. This is often where you buy in.
 
-The second bullish line never breaks though the first and the second bearish line never breaks through the first. Consider fibonacci retracement.
+Points B & D will always have high volume, and if the pattern is successful, the gap up will be too.
 
-Aziz will buy in between points C and D, at a price between B & C, with a stop loss being the low of point C. Take profit should be the minimum of A.
+The second bullish line never breaks though the first and the second bearish line never breaks through the first. Use a Fibonacci retracement tool to help identify patterns like this.
 
-Consider if VWAP is acting as a support.
+_Aziz_ in "How to Day Trade for a Living" will buy in between points C and D in anticipation of a move higher (ideally close to point C to minimise the losses from being stopped out). Take profit should be the minimum of A. Aziz considers it unnecessary to wait until point D to buy as it can reduce risk to reward ratio.
+
+Consider if VWAP is acting as a support to improve your confidence in the trade.
 
 ### Sources
 
-How to Day Trade for a Living
-https://www.youtube.com/watch?v=IHeJROuEzRU
+- [ ] _How to Day Trade for a Living_ by Andrew Aziz
+- [ ] [ABCD Pattern: A Beginners Day Trading Strategy](https://www.youtube.com/watch?v=IHeJROuEzRU) by Ross Cameron (YouTube)
 
 ## Bull Flag Momentum
 
-A pattern involving one or more large jumps in stock price, followed by a consolidation period (the flag). Buy in during the consolidation period. Can happen on many different chart periods, 1 minute, 2 minute, 5 minute, etc
+A pattern involving one or more large jumps in stock price (the "flag pole"), followed by a consolidation period (the flag). Buy in during the consolidation period. Can happen on many different chart periods, 1 minute, 2 minute, 5 minute, etc.
 
-Never buy during the flag pole, always buy during the consolidation period, awaiting another pole. The stop loss should be the support of the previous consolidation. Never trade more than 2 bull flags in a single stock, will usually sell off after that.
+Flag poles will have high volume, flags will have lower volume.
 
-On low float stocks, Aziz will only jump in after confirmation of a breakout. This reduces risk and exposure time in low float stocks.
+Never buy during the flag pole. This is called "chasing the stock". Aways buy during the following consolidation period, or if it starts moving upwards, to await or anticipate another pole. _Aziz_ mentions to enter the trade during quiet times and take profits during volatile ones. On low float stocks, Aziz will only jump in after prices begin moving over a high of the consolidation candlesticks. This reduces risk and exposure time in low float stocks.
 
-Flag poles will usually have high volume. Exit on completion of the flag pole.
+The stop loss should be the support of the consolidation. _Aziz_ will often take profit on the gap up. Never trade more than two bull flags in a single stock, as it can sell off after that as buyers become exhausted. Beginners should be careful trading this. It is a risky strategy—especially after open—that requires a fast execution platform.
 
-Beginners should be careful trading this. Risky strategy that requires a fast execution platform.
+Scalpers will often trade this pattern by buying during the breakout, taking profit, and exiting almost immediately, ignoring the consolidation period.
+
+### Sources
+
+- [ ] _How to Day Trade for a Living_ by Andrew Aziz
 
 ## Top & Bottom Reversals
 
