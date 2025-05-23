@@ -39,21 +39,31 @@ Scalpers will often trade this pattern by buying during the breakout, taking pro
 
 ## Top & Bottom Reversals
 
-Identified by multiple consecutive candles in a single direction on the 5 minute chart, followed by an indecision candle.
-Features to identify with:
+Identified by multiple consecutive candles in a single direction on the 5 minute chart, followed by an indecision candle. The stock may now be in overbought or oversold conditions that indicate a reversal will happen.
 
-- Stock has an extreme 5 minute RSI value above 90 or below 10.
-- Only buy after the reversal is confirmed. It’s possible an indecision candle does not necessarily lead to a reversal.
+Aziz indicates four features to identify with:
+
+- At least five candles moving downward or upward consistently, on a 5 minute chart.
+- Stock has an extreme 5 minute RSI (Relative Strength Index) above 90 or below 10.
 - Is being traded at an important intraday support or resistance level.
     - Only take bottom reversals when the stock is near a support level.
     - Only take top reversals when the stock is near a resistance level.
-- When the trend reaches its end, indecision candles will form.
+- When the trend reaches its end, indecision candles will form (sometimes, if a reversal happens quickly there will be no indecision candle however).
 
-Need to wait for confirmation or reversal before entering, not just the indecision candle. This could be first candle to reach a new high at an important intraday support. Can also confirm with higher than normal volume.
+Only buy after the reversal is confirmed. It’s possible an indecision candle does not necessarily lead to a reversal. For a bottom reversal, this will be the first candle to reach a new high at an important intraday support. Can also confirm with higher than normal volume. Aziz waits for a new high on the 5 minute chart because that chart is "cleaner".
 
-It must be near a support or resistance level! RSI must be very high or low.
+Take profit when the stock reaches an intraday level or a moving average. Stop loss can be the low of the indecision candle. If the stock moves sideways, it may be consolidating to move back down, and it is best to get out.
 
-Take profit when the stocks reaches an intraday level or a moving average.
+Reversal strategies can have good profit-to-loss ratios for beginners.
+
+### Todos 
+
+ - Can this be traded on shorter time periods like 1 minute?
+ - Configure and find a top and bottom reversal scanner.
+
+### Sources
+
+- [ ] _How to Day Trade for a Living_ by Andrew Aziz
 
 ## Moving Average Trend
 
