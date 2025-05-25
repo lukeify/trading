@@ -75,6 +75,10 @@ False breakouts above/below an EMA can happen when there is low volume—experie
 
 Aziz rarely uses these because they are slow and can leave you exposed to the market for a long time, and can be hard to identify moving average trends just after open
 
+### Todos
+
+- Update from How to Day Trade for a Living
+
 ## VWAP Trading
 
 The relation between VWAP and price can show who is in overall control of a stock. If a price is above VWAP, buyers are in control, if a price is below VWAP, sellers are in control.
@@ -87,6 +91,9 @@ Half-dollars and full dollars often act as support/resistance.
 
 When daytrading around VWAP, entry should be as close as possible to VWAP, and stop loss should be a candle closing below VWAP. Trade should be kept until profit target or new support/resistance level is reached.
 
+### Todos
+
+- Update from How to Day Trade for a Living
 ## Support & Resistance
 
 If support & resistance lines are difficult or impossible to find, they don’t have to be drawn. Instead, consider trading on VWAP or moving averages.
@@ -95,7 +102,15 @@ Aziz doesn’t like diagonal trend Ines.
 
 ## Red-to-green Trading
 
+### Todos
+
+- Describe from How to Day Trade for a Living
+
 ## Opening Range Breakout (ORB)
+
+### Todos
+
+- Describe from How to Day Trade for a Living
 
 ## Resources
 
