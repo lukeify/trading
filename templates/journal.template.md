@@ -1,7 +1,10 @@
-# <% tp.date.now() %> — Day <% tp.system.prompt("Day") %>
+# <% tp.date.now("D MMMM YYYY") %> — Day <% tp.system.prompt("Day") %>
+
+Date in US: <% tp.date.yesterday("D MMMM YYYY") %>
+
 ## News & Summary
 
-![SPX Chart](../images/charts/<% tp.date.now() %>/SPX.png)
+![SPX Chart](../images/charts/<% tp.date.yesterday() %>/SPX.png)
 
 ## Selected Tickers
 
