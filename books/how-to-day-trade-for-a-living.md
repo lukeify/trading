@@ -110,11 +110,11 @@ Aziz does not recommend IBKR Workstation—but does not state why. Likely becaus
 
 ## Price Action
 
-**Spinning top candles** have large wicks relative to the body and indicate market indecision, and can be useful in identifying reversal.
+**Spinning top candles** have large wicks relative to the body and indicate market indecision, and can be useful in identifying a reversal.
 
 **Doji candles** (shooting star, hammer) have very small bodies and often an asymmetrical wick, the former indicating that bulls tried to push the price higher and failed, the latter indicating bears tried to push the price lower and failed.
 
-Indecision candles alone are not enough though—must combine it with
+Indecision candles alone though are not enough for the basis of a trade—you must look for confirmation candles, as well as other forms of analysis such as support or resistance levels, to provide a suitable trade entry.
 
 ## Chapter 7: Important Day Trading Strategies
 
@@ -176,6 +176,8 @@ Watch each watchlisted stock in the 15 minutes prior to market open. Create pote
 - How might support and resistance levels affect the trading?
 
 ### Organise a trade plan
+
+By the time 9:30AM arrives, you should have your trading plan in place and how you intend to initiate trades on the stocks on your watchlist based on the if-then scenarios you have developed in pre-market.
 
 ### Initiate trades according to your plan
 
