@@ -22,7 +22,7 @@ The fundamental concept is to find "_stocks in play_"—these are stocks with hi
 
 ### "Stocks in play"
 
-- Look for stocks that have high relative volume, have recent news, had large changes in premarket, or develops important intraday levels for trading.
+- Look for stocks that have high relative volume, have recent news, had large changes in premarket price, or develop important intraday levels for trading.
 - Must have high average liquidity—Aziz only trades stocks with an average volume of more than 500,000 shares per day.
 - Stay away from stocks that are trading normally.
 - Stocks in play will often be in play for several days after the fact.
@@ -30,11 +30,11 @@ The fundamental concept is to find "_stocks in play_"—these are stocks with hi
 
 ### Classes of Stock
 
-Aziz's definition of _medium float_ is "20–500 million" according to the glossary of the book, [but also hosts a PDF on Bear Bull Traders](https://bearbulltraders.com/wp-content/uploads/pdfs/AndrewAziz-How_to_Day_Trade_for_a_Living_AUDIOBOOK-FIGS.pdf) where he describes _medium float_ as being "10–500 million". It can therefore be assumed the _low float_ refers to stocks under 10 or 20 million shares.
+Aziz's definition of _medium float_ is "20–500 million" according to the glossary of the book, [but also hosts a PDF on Bear Bull Traders](https://bearbulltraders.com/wp-content/uploads/pdfs/AndrewAziz-How_to_Day_Trade_for_a_Living_AUDIOBOOK-FIGS.pdf) where he describes _medium float_ as being "10–500 million". It can therefore be assumed that _low float_ refers to stocks under 10 or 20 million shares.
 
 #### Low float stocks under $10
 
-Only recommended for very experienced or highly equipped retail traders as low liquidity can cause high volatility. Optimal strategy is [Bull Flag Momentum](../patterns.md#Bull%20Flag%20Momentum).
+Only recommended for very experienced or highly equipped retail traders as low liquidity can cause high and unexpected volatility. Optimal strategy is [Bull Flag Momentum](../patterns.md#Bull%20Flag%20Momentum).
 
 #### Medium float stocks ($10–100)
 
@@ -64,19 +64,17 @@ Aziz defines a real-time volume scanner on page 88:
 - Average relative volume 1.5x
 - Average daily volume > 500,000
 
-### Reversal scanner
+### Real-time reversal scanner
 
-Aziz also mentions a reversal scanner that he later details in the "Strategies" section around trading reversal patterns.
+Aziz also mentions an intra-day reversal scanner that he later details in the "Strategies" section around trading reversal patterns. Intra-day scanners are useful for identifying trades on stocks that are not applicable in market open conditions. For example, five consecutive green or red candles could be the basis for a real-time reversal scanner.
 
 ### Miscellaneous notes
 
-Can also run real-time intraday scans to scan for stocks which have strategies that are not applicable to market open conditions, such as top and bottom reversal strategies
+You should consider the sector of the stock in play. If many of stocks in play are in the same sector, the sector may be under institutional control.
 
-Need to consider the sector of the stock in play. If lots of stocks in play are in the same sector, the sector may be under institutional control.
+Never use market orders, always use _marketable limit orders_, which prioritise immediacy, but ensure a cap is present so that you don’t overpay when buying. For example, a stock trading at a bid-ask of $99.95–$100.00 could have a marketable limit order of $100.00+5 cents, to buy up to $100.05. This caps slippage up to your limit.
 
-Never use market orders, always use _marketable limit orders_, which prioritise immediacy, but ensure a cap is present so that you don’t overpay when buying. For example, a stock trading at a bid-ask of $99.95–$100.00 could have a marketable limit order of $100.00+5 cents, to buy up to $100.05. This caps slippage.
-
-Short Selling Restrictions mean that short sellers buying back in must pay the ask, not the bid.
+A _Short Selling Restriction_ means that short sellers buying back in must pay the ask, not the bid.
 
 ### Trading communities
 
@@ -91,7 +89,7 @@ Aziz mentions the following trading communities:
 7. trade-ideas.com
 ## Chapter 5: Tools & Platforms
 
-Aziz does not recommend IBKR Workstation—but does not state why. Likely because it is not direct access software like DAS Trader Pro, which is his personal preference. 
+Aziz does not recommend IBKR Workstation—but does not state why. This is likely because it is not direct access software like DAS Trader Pro, which is his personal preference. 
 
 ### Aziz's hotkeys for charts buying long
 
@@ -118,11 +116,11 @@ Indecision candles alone though are not enough for the basis of a trade—you mu
 
 ## Chapter 7: Important Day Trading Strategies
 
-> *Novice traders believe that when they enter the trade, they should not do anything else but patiently wait for the price to hit their profit target or stop loss level. This is the opposite of what professional traders do. The professionals know that this is not sufficient. 
+> _Novice traders believe that when they enter the trade, they should not do anything else but patiently wait for the price to hit their profit target or stop loss level. This is the opposite of what professional traders do. The professionals know that this is not sufficient._
 > 
-> When you plan for the trade and enter a position, you have a minimum of information regarding the market and the validity of your idea. As the market moves after your entry, you will receive new price action and data about your initial trade idea. The price action of the stock will either be supporting or not supporting your reasons for being in that trade. 
+> _When you plan for the trade and enter a position, you have a minimum of information regarding the market and the validity of your idea. As the market moves after your entry, you will receive new price action and data about your initial trade idea. The price action of the stock will either be supporting or not supporting your reasons for being in that trade._
 > 
-> Therefore, you need to manage your open position.*
+> _Therefore, you need to manage your open position._
 
 The likelihood of how confident you are a trade will go in your favour should determine your initial sizing. Consider scaling into trades as the price action works into your favour, but never scale down into a losing trade. 
 
@@ -212,11 +210,13 @@ John had success with a BHOD (Break High of Day) strategy that involved scalping
 
 ## Chapter 10: Next Steps for Beginner Traders
 
-Three important skills underly all successful day trading:
+Three important skills underlie all successful day trading:
 
 > *1. Constantly analyse the balance of power between buyers and sellers and bet on the winning group.*
->*2. You need to practice excellent money and trade management.*
->*3. And you need sufficient self-discipline to follow your trading plan, to avoid getting overexcited or depressed in the markets, and to resist the temptation to make emotional decisions*
+> 
+> *2. You need to practice excellent money and trade management.*
+>
+> *3. And you need sufficient self-discipline to follow your trading plan, to avoid getting overexcited or depressed in the markets, and to resist the temptation to make emotional decisions*
 
 ###  The Seven Essentials for Day Trading
 
@@ -267,7 +267,7 @@ Aziz live-records all of his trades during the morning session and rewatches the
 - Look for new algorithmic programs to be aware of.
 - Search for areas in trades where he could have added more size.
 - Identify times he could have hold for longer in winning trades.
-- Finds spots where he was too aggressive.
+- Find spots where he was too aggressive.
 - Identify when he took a trade that offered a poor risk:reward opportunity.
 - Reviews his position sizing, where he took profits, where he added more.
 
@@ -301,13 +301,22 @@ It consists of:
 
 #### Activities designed to improve the trading framework
 
-Create an **education plan** of what you need to accomplish over a long period of time, and give you an estimate of how long that may take to meet your trading goals, and manage your expectations.
+Create an **education plan** of what you need to accomplish over a long period of time, to give you an estimate of how long that may take to meet your trading goals, and to manage your expectations.
 
 Setting **goals** that are SMART (Specific, Measurable, attainable, Relevant, Time-based) for daily, weekly, monthly, quarterly, and annual goals; and capture progress on them to ensure you maintain a positive emotional attitude on your journey.
 
 Creating and modifying **trading rules** based on your learnings, journalling, and analysis to improve the quality of your trading.
 
-Design a **mission statement** to capture the essence of you trading goals and the philosophies that support them. It also signals what your business is all about to yourself. This could include:
+Design a **mission statement** to capture the essence of you trading goals and the philosophies that support them. It also signals what your business is all about to yourself.
+
+These questions will help you design your business plan:
+
+- Who is going to be your support network?
+- What are your long-term goals?
+- When are you available to trade?
+- Who are you going to learn from?
+- Why do you want to day trade?
+- What capital is available to you?
 
 #### Tasks outside of trading
 
