@@ -26,7 +26,7 @@ The fundamental concept is to find "_stocks in play_"—these are stocks with hi
 - Must have high average liquidity—Aziz only trades stocks with an average volume of more than 500,000 shares per day.
 - Stay away from stocks that are trading normally.
 - Stocks in play will often be in play for several days after the fact.
-- Stocks must have a fundamental catalyst that cause the stock to move. This could be earnings, political news, a media event, a product release, a drug trial, etc.
+- Stocks must have a fundamental catalyst that causes the stock to move. This could be earnings, political news, a media event, a product release, a drug trial, etc.
 
 ### Classes of Stock
 
