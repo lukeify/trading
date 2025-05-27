@@ -8,16 +8,29 @@ trade_type = await tp.system.prompt("Trade Type");
 
 ### <% ticker %> <% dir %> (#<% count %>) — <% trade_time %>
 
-<% trade_type %>
+Trade type: <% trade_type %>
 
-Description.
+Provide an explanation of the trade, chronologically, while also answering questions like:
 
-#### #### What was good about this trade?
+- How did I find the opportunity to trade this stock?
+- What was my rationale for entry?
+- What was the quality of my entry from a risk:reward perspective? Did it go according to plan?
+- How much did I risk? How did you manage your position sizing?
+- How was my exit execution?
+- Did I take profit too early? 
 
-* Good line item
+#### Environmental
 
-#### What was bad about this trade?
+* What was my physical and emotional wellbeing when I took the trade?
 
-- Bad line item
+#### #### What went right about this trade?
+
+- How accurate was my technical analysis?
+- What contributed to this being a good trade?
+
+#### What was wrong about this trade?
+
+- Is there anything I could improve next time?
+- Did I lack discipline? Was I scared?
 
 ![Trade Chart](../images/trades/<% tp.file.title.split("_")[0] %>/<% ticker %>_<% count %>.png)
