@@ -23,7 +23,7 @@ Trade type: <% trade_type %>
 
 * *What was my physical and emotional wellbeing when I took the trade?*
 
-#### #### What went right about this trade?
+#### What went right about this trade?
 
 - *How accurate was my technical analysis?*
 - *What contributed to this being a good trade?*
