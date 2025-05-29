@@ -22,6 +22,13 @@
 - *What is my plan if it sets up to the long side? How about the short side?*
 - *What might my stop loss be? What might my profit window look like?*
 
+| Level      | Value | Type      |
+| ---------- | ----- | --------- |
+| Resistance |       | Daily     |
+| Resistance |       | Premarket |
+| Support    |       | Premarket |
+| Support    |       | Daily     |
+
 #### Statistics
 
 | Key            | Value | Classification | Source |
