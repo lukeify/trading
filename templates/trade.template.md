@@ -21,7 +21,7 @@ Trade type: <% trade_type %>
 
 #### Environmental
 
-* *What was my physical and emotional wellbeing when I took the trade?*
+- What was my physical and emotional wellbeing when I took the trade?*
 
 #### What went right about this trade?
 
