@@ -6,6 +6,7 @@ Documentation of my journey learning about how to daytrade.
 
 - [Books](./books)
   - [How to Day Trade for a Living](./books/how-to-day-trade-for-a-living.md) by Andrew Aziz
+- [Expenses](./expenses.md)
 - [Journal (Ordered by day)](./journal)
 - [Templates](./templates)
 - [Acronyms & Encyclopedia](./acronyms-encyclopedia.md)
