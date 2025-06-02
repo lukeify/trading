@@ -1,0 +1,3 @@
+.obsidian/
+resources/ignored/**
+!resources/ignored/.gitkeep
