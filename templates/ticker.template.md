@@ -2,7 +2,7 @@
 
 ### <% ticker %>
 
-Identified from: 
+Identified from:
 
 | Key         | Value | Classification | Source |
 | ----------- | ----- | -------------- | ------ |
