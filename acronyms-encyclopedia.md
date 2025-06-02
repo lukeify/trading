@@ -83,7 +83,9 @@ Captured for completeness, but not interested in this style of trading for now.
 
 - **Beta**. A measure of how closely a stock follows an index, where 1 = exactly matches. Often the S&P500 for U.S. stocks. High-beta stocks can be more at the whims of general market movement.
 - **DOM**. Depth of Market.
-- **Float**. The outstanding shares available for trading, usually excluding restricted stock units.
+- **Float**. The outstanding shares available for trading, usually excluding restricted stock units
+	- **Low float** stocks usually have under 20 million shares available for trading.
+	- **High float** stocks will be anything above 20 million shares available.
 - **FOMC**. A "FOMC day"
 - **HTF**. Higher Time Frame.
 - **Liquidity Sweep**.
@@ -91,7 +93,12 @@ Captured for completeness, but not interested in this style of trading for now.
 - **Lower Time Frame**.
 - **Order Block**.
 - **Order Flow**.
-- **Market Capitalisation**. Shares issued multiplied by Price per share.
+- **Market Capitalisation**. Shares issued multiplied by price per share.
+	- **Mega-cap** stocks have >$200 billion in market cap.
+	- **Large-cap** stocks have between $10–200 billion.
+	- **Mid-cap** stocks have between $2–10 billion.
+	- **Small-cap** stocks have between $300 million–2 billion.
+	- Anything under $300 million can be classified as **micro-cap** or **nano-cap**.
 - **NBBO**. National Best Bid and Offer. The best available price for a stock at any given time across all three major networks.
 - **PDC**. Previous Day Close.
 - **PDT**. Pattern Day Trader. A series of regulations that U.S. brokers are required to subject their clients to if they hold under $25,000 in funds on a margin account. Traders will be limited to a certain number of trades within a couple day window.
