@@ -5,8 +5,9 @@ Documentation of my journey learning about how to daytrade.
 ## Table of Contents
 
 - [Books](./books)
-    - [How to Day Trade for a Living](./books/how-to-day-trade-for-a-living.md) by Andrew Aziz
+  - [How to Day Trade for a Living](./books/how-to-day-trade-for-a-living.md) by Andrew Aziz
 - [Journal (Ordered by day)](./journal)
+- [Templates](./templates)
 - [Acronyms & Encyclopedia](./acronyms-encyclopedia.md)
 - [Patterns](./patterns.md)
 - [Psychology](./psychology.md)
@@ -22,3 +23,4 @@ Documentation of my journey learning about how to daytrade.
 ## Contributing
 
 This repository is primarily developed through [Obsidian](https://obsidian.md), with occasional edits in IntelliJ WebStorm for mass find-and-replace and non-markdown file management.
+You will need the [templater](https://github.com/SilentVoid13/Templater) plugin to generate snippets of each journal entry so the template variables are filled.
