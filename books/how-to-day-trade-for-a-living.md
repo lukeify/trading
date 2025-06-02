@@ -2,6 +2,24 @@
 
 by Andrew Aziz
 
+## Review
+
+★★★★☆ 4/5
+
+A catchy title, and no doubt that is partially why this is one of the most recommended and read books under "trading" on Amazon. However, this book will not give you the skills, tools, or experience you need to _Day Trade for a Living_. What it will give you though is an introduction to the mindset, strategies, risk management, and portfolio management you will need to hone to succeed in daytrading; in a more cohesive package than watching a series of YouTube videos. And make no mistake that the content of this book is already available online. What differentiates this book from freely available online information is Aziz's packaging of the content, his mindset, his strategy, into a structure which is more likely to set readers up for future success.
+
+If you are even mildly familiar with the financial markets, you'll be aware of many of the concepts covered in this book; how candlesticks work, what float and market capitalisation are, the mathematics behind risk to reward, and more. Aziz defines his overall strategy well: finding and capitalising on the movement of "Stocks in Play", tickers with high volume, high liquidity, that have sensible and tradable price action because of a fundamental catalyst. If you aren't taking notes on his modus operandi, you aren't paying attention.
+
+There are two main deficiencies I would highlight after reading through. The first is the constant need to flip between pages to reference a figure, either forwards or backwards. The book could have been edited and formatted as such that discussions around the figures always take place within the same leaf. The second is sometimes there's an excessive amount of concept repetition—often around the same idea, often in the same few pages—that occurs several times throughout the book. This might be the author's decision to reinforce concepts, but some pages you will walk away and wish there had been an extra bit of conciseness there.
+
+Another quibble is Aziz's obsession with mentioning that coffee and daytrading do not mix (curiously alongside mentioning his lack of consumption of animals), something that he feels the need to reassure readers of three or four times throughout the book. I might take some of his trading guidance, but I won't be looking to him for dietary advice.
+
+Overall this is a worthwhile read if you want to know if daytrading might be for you, and serves as a guide to jump off from onto more in-depth books. Aziz paints a optimistic—if difficult—path ahead. Are you ready for it?
+
+Finished 26 May 2025.
+
+***
+
 ## General Notes
 
 - The minimum risk to reward for any trade is 2:1. Your stop loss and take profit should be based on technical analysis, not arbitrary positions on the chart.
@@ -286,18 +304,18 @@ This is the core of your business plan, and is separate from your daily trading 
 It consists of:
 
 - Your money and risk management principles.
-    - What your "numbers" are to apply the correct risk:reward in order to achieve an acceptable return, such as:
-    - What percentage of your account to risk per trade (or a maximum dollar value you will risk per trade).
-    - When you will scale up.
-    - How much money you are aiming to make each day.
-    - The maximum amount of money you are prepared to lose each day.
-    - The maximum number of trades you will take in a day.
+  - What your "numbers" are to apply the correct risk:reward in order to achieve an acceptable return, such as:
+  - What percentage of your account to risk per trade (or a maximum dollar value you will risk per trade).
+  - When you will scale up.
+  - How much money you are aiming to make each day.
+  - The maximum amount of money you are prepared to lose each day.
+  - The maximum number of trades you will take in a day.
 - The strategies and patterns you trade.
 - Your trade management rules. Consider questions such as:
-    - When should a first partial be taken? What size should that be?
-    - Should I move stop loss to breakeven after taking a partial?
+  - When should a first partial be taken? What size should that be?
+  - Should I move stop loss to breakeven after taking a partial?
 - How you will be accountable for actions when you deviate from your framework.
-    - Do you stop trading? Do you trade in a simulator?
+  - Do you stop trading? Do you trade in a simulator?
 
 #### Activities designed to improve the trading framework
 
