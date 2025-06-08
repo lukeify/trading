@@ -14,7 +14,40 @@ Candlestick-specific terminology.
 
 Relating to trading measurements and indicators.
 
-- **ATR**. Average True Range.
+### Average True Range (ATR)
+
+Stocks with a high Average True Range will tend to swing more in price over a day, and can be good candidates for day trading as that volatility creates profit potential. Average True Range is usually measured over a period of 14 days (this length is per the suggestion of _Wilder_, who developed the indicator). [Calculation of a single day's _true range_ is as follows](https://www.investopedia.com/terms/a/atr.asp#toc-how-to-calculate-the-atr):
+
+$$
+TR = Max[(H-L), |H-C_{p}|, |L - C_{p}|]
+$$
+
+Where:
+
+- H = High of the period
+- L = Low of the period
+- C<sub>p</sub> = Closing price of previous period
+
+The maximum is then taken of these 3 values:
+
+- (H - L) = High of the period minus low of the period
+- |H - C<sub>p</sub>| = Absolute value of the period's high minus the previous period's closing price.
+- |L - C<sub>p</sub>| = Absolute value of the period's low minus the previous period's closing price.
+
+Repeat this process for the period of time you are interested in (usually 14 days) to calculate the ATR:
+
+$$
+ATR = \left(\frac{1}{n}\right)\sum_{i}^{n}\mathrm{TR}_{i}
+$$
+
+Once the ATR has been initially calculated, it can be recomputed efficiently for the next value by factoring in the next true range term:
+
+$$
+ATR = \frac{\text{Previous ATR}(n-1) + \text{TR}}{n}
+$$
+
+### Others
+- **Relative ATR** is a fraction of the ATR versus the overall share price.
 - **EMA**. Exponential Moving Average.
 - **SMA**. Simple Moving Average.
 - **RSI**. Relative Strength Index.
