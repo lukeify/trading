@@ -16,7 +16,7 @@ Relating to trading measurements and indicators.
 
 ### Average True Range (ATR)
 
-Stocks with a high Average True Range will tend to swing more in price over a day, and can be good candidates for day trading as that volatility creates profit potential. Average True Range is usually measured over a period of 14 days. [Calculation of a single day's _true range_ is as follows](https://www.investopedia.com/terms/a/atr.asp#toc-how-to-calculate-the-atr):
+Stocks with a high Average True Range will tend to swing more in price over a day, and can be good candidates for day trading as that volatility creates profit potential. Average True Range is usually measured over a period of 14 days (this length is per the suggestion of _Wilder_, who developed the indicator). [Calculation of a single day's _true range_ is as follows](https://www.investopedia.com/terms/a/atr.asp#toc-how-to-calculate-the-atr):
 
 $$
 TR = Max[(H-L), |H-C_{p}|, |L - C_{p}|]
@@ -38,6 +38,12 @@ Repeat this process for the period of time you are interested in (usually 14 day
 
 $$
 ATR = \left(\frac{1}{n}\right)\sum_{i}^{n}\mathrm{TR}_{i}
+$$
+
+Once the ATR has been initially calculated, it can be recomputed efficiently for the next value by factoring in the next true range term:
+
+$$
+ATR = \frac{\text{Previous ATR}(n-1) + \text{TR}}{n}
 $$
 
 ### Others
