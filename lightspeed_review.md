@@ -6,7 +6,8 @@ Lightspeed is a direct-access broker that has a reputation for offering very fas
 
 - U.S. brokerage (following the PDT rules).
 - Accepts international customers, but does not provide a New Zealand account number for customers, wire transfers or domestic ACH transfers only.
-	- It may be possible to workaround this by having a Wise USD-denominated bank account, which could be considered a non-"third-party" account as it is attached to my name. This would avoid the need for potentially expensive fees.
+	- Likely possible to workaround this by having a Wise USD-denominated bank account, which could be considered a non-"third-party" account as it is attached to my name. This would avoid the need for potentially expensive fees.
+- Does not provide any paper trading facilities.
 
 ### Pricing
 
@@ -21,7 +22,6 @@ Other trading pricing caveats:
 - There is a minimum commission of US$0.25/trade on the per-share rate.
 - For share prices less than US$1.00, "30 basis points times the total trade value will be charged".
 - Pre- and post-market orders have an additional US$0.003/share routing charge.
-
 
 [Brokerage, service fees](https://lightspeed.com/pricing-fees/brokerage-fees), and [market data pricing](https://lightspeed.com/pricing-fees/market-data) caveats:
 
@@ -58,6 +58,7 @@ The per-share rate makes the most sense if your individual trades are under 1142
 | 200        | $1.40      | $0.60                                             | $0.0238                         | ~$2.02  |
 | 1000       | $7.00      | $3.00                                             | $0.119                          | ~$10.12 |
 | 5000       | $35.00²    | $15.00                                            | $0.595                          | ~$50.60 |
+
 ¹ Minimum commission of $0.25 per trade applies.
 ² This exceeds the breakeven of 1142 shares traded, if above this regularly it would be more economic to switch to their per-trade rate.
  
@@ -83,15 +84,20 @@ When run within Parallels on a Mac, the Windows version seems to be significantl
 ### Level 2 data feed
 
 Lightspeed provides its own Level 2 data feed that is integrated into Lightspeed Trader, see prices above.
+
 ### Hotkeys
 
 Lightspeed seems to offer the most versatile hotkey entry system for trading of any of the platforms, I've evaluated, possibly with some limitations around closing out positions with partials.
 
 ## Questions
 
-1. Can a paper account be opened with an expedited open account process—or is a full account application required?
+1. Can a paper account be opened with an expedited open account process—or is a full account application required? Can paper accounts have their orders reset to allow starting from scratch?
+	- Lightspeed does not provide any paper trading facilities.
 2. Can the paper account be opened without a full Reg-T Margin deposit of >US$25,000? 
-3. Can paper accounts have their orders reset to allow starting from scratch?
-4. Can a domestic ACH transfer be initiated using a Wise USD-denominated bank account in my name?
-5. Does Lightspeed Trader offer hotkeys be created to closeout arbitrary positions such as 1/8th or 1/10th? Or would that have to be controlled through tier size selection?
-6. Does Lightspeed Trader provide OCA/OCO functionality for sending stop losses alongside orders?
+	- No, a full deposit of US$25,000 minimum is required.
+3. Can a domestic ACH transfer be initiated using a Wise USD-denominated bank account in my name?
+	- On speaking with a representative of Lightspeed, it seems a Wise transfer would work, provided the bank account is in my own name.
+4. Does Lightspeed Trader offer hotkeys be created to closeout arbitrary positions such as 1/8th or 1/10th? Or would that have to be controlled through tier size selection?
+	- No, closeouts are in the pre-provided quantities only. Other closeout position techniques would require adjusting quantities and placing sell orders.
+5. Does Lightspeed Trader provide OCA/OCO functionality for sending stop losses alongside orders?
+	- OCA/OCO functionality is not provided, all orders are placed separately. There is a setting that does allow you to "cancel pending orders when a position is closed" however.
