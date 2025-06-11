@@ -80,14 +80,14 @@ Once an order is placed, a P&L bar will appear next to the price axis to visuall
 	- Additionally, when historical data is loaded, the exchange information is populated with a single letter. What is the meaning of this?
 8. The countdown clock to a new candle in the daily chart appears to be incorrect.
 9. Is there a way to trim extreme candles without having to manually enter values for them? They add noise to the data and make auto-scaling functionality useless.
-	- LightSpeed trader can trim candles that are extreme beyond a customisation standard deviation.
+	- LightSpeed trader can trim candles that are extreme beyond a customisable standard deviation.
 10. Could we set the default tick size to $0.01 for all instruments of a specific type? Or by price range? I'd never usually want stocks to be in increments smaller than that.
 
 ### Duplicate STP orders submitted via IBKR TWS Gateway
 
 When submitting a "MKT+STP" order (either from the chart or using a hotkey), the bracket order would be transmitted, the market order would be filled, and then a duplicate STP order would appear, with my original position size, leaving two active STP orders at the same price. This is quite a dangerous situation because if the stops are hit, you will end up in a short position.
 
-Originally, I thought this was perhaps caused by me setting the "Master Client ID" setting in IB Gateway to a non-empty value, but unsetting this did also not fix the issue.
+Originally, I thought this was perhaps caused by me setting the "Master Client ID" setting in IB Gateway to a non-empty value, but unsetting this did not fix the issue.
 
 ### Error Placing Order(s) Dialog
 
