@@ -33,6 +33,7 @@ Compared to TradingView, the charting customisation is extremely in-depth, with 
 - The "labels" that can be displayed on charts lack customisation options around spacing, colour, differentiation between keys and values, etc.
 - Interactions around saving "chart templates" and associating them with "analyses" is also clunky.
 	- I am constantly being asked to "save" templates and analyses even if I just want to reuse a standard chart design and studies across multiple instruments.
+
 ## Trading
 
 - **Orders panel** captures individual buys/sells made, including those that are unfilled or non-transmitted. Orders that are not filled can be edited here.
@@ -62,6 +63,7 @@ Once an order is placed, a P&L bar will appear next to the price axis to visuall
 | UI           | Very good (relative to other platforms)                           |
 | Charting     | Very good, not quite as ergonomic as TradingView.                 |
 | Data Quality | Good when integrated with dxfeed, poor when integrated with IBKR. |
+| Correctness  | Heavily limited by IB Gateway.                                    |
  
 ## Outstanding Questions & Issues
 
@@ -80,6 +82,20 @@ Once an order is placed, a P&L bar will appear next to the price axis to visuall
 9. Is there a way to trim extreme candles without having to manually enter values for them? They add noise to the data and make auto-scaling functionality useless.
 	- LightSpeed trader can trim candles that are extreme beyond a customisation standard deviation.
 10. Could we set the default tick size to $0.01 for all instruments of a specific type? Or by price range? I'd never usually want stocks to be in increments smaller than that.
+
+### Duplicate STP orders submitted via IBKR TWS Gateway
+
+When submitting a "MKT+STP" order (either from the chart or using a hotkey), the bracket order would be transmitted, the market order would be filled, and then a duplicate STP order would appear, with my original position size, leaving two active STP orders at the same price. This is quite a dangerous situation because if the stops are hit, you will end up in a short position.
+
+Originally, I thought this was perhaps caused by me setting the "Master Client ID" setting in IB Gateway to a non-empty value, but unsetting this did also not fix the issue.
+
+### Error Placing Order(s) Dialog
+
+Occasionally I would also see a dialog stating:
+
+`Cannot invoke "com.motivewave.platform.databean.MWOrder.setUpdatelnProgress(boolean)" because "<parameter1>" is null`
+
+![[motivewave_error_placing_orders.png]]
 
 ## Solved
 
@@ -103,7 +119,7 @@ You would need to manually select between the selected size before using the key
 
 ## Post: MotiveWave needs better scalping hotkey support
 
-Outline of a post I will submit to MotiveWave support.
+Outline of a post I would have made to MotiveWave support if it had passed my basic correctness tests.
 
 --- 
 
