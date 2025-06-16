@@ -121,3 +121,11 @@ I used dxfeed to integrate historical tick data with MotiveWave, however since I
 | --------------------------------------- | ------------ | ---------- | ---------- |
 | Consolidated US Equities Level 1 (NBBO) | 2 June 2025  | US$49      | $83.48     |
 | Nasdaq TotalView Market Depth           | 6 June 2025  | US$69      | $116.15    |
+
+## Ancillary
+
+Other purchases in support of trading. Total cost incurred to date: NZ$429.00
+
+| Item                                         | Cost (including shipping & GST) |
+| -------------------------------------------- | ------------------------------- |
+| Brother DCP-L3560CWD Colour Laser A4 Printer | NZ$429.00                       |
