@@ -59,9 +59,11 @@ Subscribed to the _Pro_ version for one month to test its functionality. While t
 
 ### DAS Trader Pro
 
+Subscribed to the monthly Deluxe Edition
+
 | Service                       | Date Charged | Paid (USD) | Paid (NZD) |
 | ----------------------------- | ------------ | ---------- | ---------- |
-| DAS Trader Pro Deluxe Edition |              |            |            |
+| DAS Trader Pro Deluxe Edition | 17 June 2025 | $150.00    | $260.55    |
 
 ### TradingView
 
