@@ -4,6 +4,8 @@ Note on Pine Script®
 
 - [Language Reference Manual](https://www.tradingview.com/pine-script-reference/v6/)
 - [User Manual](https://www.tradingview.com/pine-script-docs/)
+	- [Error messages](https://www.tradingview.com/pine-script-docs/error-messages)
+	- [Release notes](https://www.tradingview.com/pine-script-docs/release-notes)
 
 Interesting repositories:
 
