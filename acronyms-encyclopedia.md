@@ -83,7 +83,7 @@ Captured for completeness, but not interested in this style of trading for now.
 
 - **Beta**. A measure of how closely a stock follows an index, where 1 = exactly matches. Often the S&P500 for U.S. stocks. High-beta stocks can be more at the whims of general market movement.
 - **DOM**. Depth of Market.
-- **Float**. The outstanding shares available for trading, usually excluding restricted stock units
+- **Float**. The outstanding shares available for trading, usually excluding restricted stock units.
 	- **Low float** stocks usually have under 20 million shares available for trading.
 	- **High float** stocks will be anything above 20 million shares available.
 - **FOMC**. A "FOMC day"
