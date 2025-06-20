@@ -55,3 +55,12 @@ As well as call/language limits:
 - Compilation requests for scripts cannot exceed 5MB.
 - A maximum of 100,000 elements per array/matrix/map.
 
+## Bugs
+
+One documented bug I have discovered is that `session.ismarket` (as well as `session.ispremarket` and `session.ispostmarket`) return incorrect values on intraday charts for U.S. equities when in bar replay mode. Specifically:
+
+- `session.ismarket` will always return true (even if it is pre- or post-market).
+- `session.ispremarket` will always return false.
+- `session.ispostmarket` will always return false.
+
+When not in bar-replay mode, these functions seem to return correct values. This bug is as of 20 June 2025.
