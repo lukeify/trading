@@ -37,13 +37,13 @@ Ordered from Amazon US. Total cost: NZ$234.26 (US$135.12)
 
 ## Tools, Services, & Platforms
 
-Medium term plan is to use the following tools while I establish proof of profitability.
+Medium term plan is to use the following tools while I establish proof of profitability:
 
 - DAS Trader Pro (Deluxe Plan, $150/month), with OTC/Options swapped for ARCA Book.
 - TradingView Premium
 	- Including U.S. Stock Markets bundle
 
-Once profitability has been established and a track record built for several months, will likely switch to Lightspeed Trader, whilst still maintaining a TradingView premium subscription for charts.
+Once profitability has been established and a track record built for several months, I could consider a switch to LightSpeed trader, whilst still maintaining a TradingView premium subscription for charts.
 
 - Lightspeed Trader (Reg-T Margin Account)
 - TradingView Premium
