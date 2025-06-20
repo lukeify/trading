@@ -1,6 +1,6 @@
-# PineScript
+# Pine Script®
 
-Note on PineScript® 
+Note on Pine Script® 
 
 - [Language Reference Manual](https://www.tradingview.com/pine-script-reference/v6/)
 - [User Manual](https://www.tradingview.com/pine-script-docs/)
@@ -8,6 +8,8 @@ Note on PineScript®
 Interesting repositories:
 
 - [pAulseperformance/awesome-pinescript](https://github.com/pAulseperformance/awesome-pinescript)
+
+It's very important that every usage of Pine Script® have a reserved symbol appended to it.
 
 ## Syntax Notes
 
