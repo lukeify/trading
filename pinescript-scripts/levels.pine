@@ -1,0 +1,410 @@
+// @version=6
+// @description Adds important levels to the chart that could act as support and resistance. This includes the daily
+// high and low, the premarket high and low, the previous day close, the previous day high and low, the fifty-two week
+// high and low, and finally the all-time high and low.
+//
+// I felt it necessary to write this because many of the existing indicators didn't display this information in the way
+// I preferred.
+//
+// Todos:
+// 1. Introduce a "history" mode that when viewing bars in the past, the levels should update to reflect what they would
+//  have been at that bar.
+// 2. The daily, 52-week, and all-time highs and lows should be able to be set in real time, if those levels are broken.
+//
+indicator("Levels", "Levels", overlay=true)
+
+var string daily_levels_label               = "Whether to show or hide the current session daily high and low."
+var string premarket_levels_label           = "Whether to show or hide the premarket session high and low."
+var string previous_day_levels_label        = "Whether to show or hide the previous day's high and low."
+var string previous_day_close_level_label   = "Whether to show or hide the previous day's close."
+var string fifty_two_week_levels_label      = "Whether to show or hide the 52 week high and low."
+var string all_time_levels_label            = "Whether to show or hide the all time high and low."
+
+daily_levels_enabled                = input.bool(true, "Daily Levels", daily_levels_label)
+premarket_levels_enabled            = input.bool(true, "Premarket Levels", premarket_levels_label)
+previous_day_levels_enabled         = input.bool(true, "Previous Day Levels", previous_day_levels_label)
+previous_day_close_level_enabled    = input.bool(true, "Previous Day Close Level", previous_day_close_level_label)
+fifty_two_week_levels_enabled       = input.bool(true, "52 Week Levels", fifty_two_week_levels_label)
+all_time_levels_enabled             = input.bool(true, "All Time Levels", all_time_levels_label)
+
+// @function Determines if the current bar is the beginning of today. This is a reply-friendly function as it uses
+// `last_bar_time` as a reference for "now", rather than `timenow`.
+//
+// @returns [boolean] `true` if the bar represents the beginning of today, `false` otherwise.
+//
+is_beginning_of_today() =>
+    timeframe.change("D") and last_bar_time - time < timeframe.in_seconds("1D") * 1000
+
+// @function Determines if the current bar being evaluated is within today's regular trading hours (0930–1600).
+//
+// @returns [boolean] `true` if we are in regular trading hours for today, `false` otherwise.
+//
+is_today_rth() =>
+    last_bar_time - time < timeframe.in_seconds("1D") * 1000 and session.ismarket
+
+// @function Draws a range line from the start of the given range to the point in time or  where the level starts.
+//
+// @param from_time [int] The point in time or bar that demarcates the start of the range.
+// @param to_time [int] The point in time or where the level is set from.
+// @param at [float] The value on the price axis representing where the horizontal line should be drawn.
+// @param color [color] The color that the line should be drawn with. This is then set to be 60% opaque.
+// @param xloc [string] The `xloc` parameter the line should be drawn with.
+//
+// @returns
+//
+draw_range_ln(x1, x2, at, color=color.gray, xloc=xloc.bar_time) =>
+    line.new(x1, at, x2, at, xloc, color=color.new(color, 60), style=line.style_dotted)
+
+// @function Draws a fully opaque line at the provided level and time, extending to the right.
+//
+// @param x [int]
+// @param at [float]
+// @param color [color] The color that the line should be drawn with. This is fully opaque.
+// @param xloc [string] The `xloc` parameter the line should be drawn with.
+//
+// @returns void
+//
+draw_level_ln(x, at, color=color.gray, xloc=xloc.bar_time) =>
+    line.new(x, at, x + 1, at, xloc, extend=extend.right, color=color, style=line.style_dotted)
+
+// @function Returns a tuple that retrieves all of the values we are interested in from the daily chart. This function
+// is provided to `request.security` as the `expression` parameter.
+//
+// @returns
+//
+get_daily_tf_data() => [high[0], high[1], low[0], low[1]]
+
+// @function Returns a tuple that returns the highs and lows (along with the time they occurred at) from the last 52
+// bars. This is indended to be provided to a `request.security` call as the `expression` parameter.
+//
+// @returns
+//
+get_fifty_two_week_extremes() =>
+    [
+     ta.lowest(low, 52),
+     time[math.abs(ta.lowestbars(low, 52))],
+     ta.highest(high, 52),
+     time[math.abs(ta.highestbars(high, 52))]
+     ]
+
+// --------------------------------------------------------------------------------------------------------------------
+// GENERAL SETUP
+// --------------------------------------------------------------------------------------------------------------------
+//@variable A boolean that is `true` if the bar being evaluated is within the definition of "today", i.e. the same
+// date as the most recent bar. This is initially set to `false`, and will be flipped to `true` when the
+// `is_beginning_of_today` function will be evaluated.
+var bool is_today = false
+
+if is_beginning_of_today()
+    is_today := true
+
+// --------------------------------------------------------------------------------------------------------------------
+// DAILY HIGH AND LOW
+//
+// Highest valid timeframe?                         < 1D.
+// Requires higher timeframes to look back?         No.
+// Range begins at a known bar?                     Yes (today's regular trading hours).
+// Level is set only at the start of the range?     No (can be set ay any point in today's regular trading hours).
+// Level stops being set past a certain point?      Yes (end of today's regular trading hours).
+// Level can be set in real time?                   Yes.
+// Redraw of range is needed later?                 Yes (unset when a new premarket begins).
+// --------------------------------------------------------------------------------------------------------------------
+var int daily_range_time    = na
+var line daily_high_range   = na
+var line daily_high_level   = na
+var line daily_low_range    = na
+var line daily_low_level    = na
+
+if daily_levels_enabled
+    if is_today
+        if session.isfirstbar
+            daily_high_range.delete()
+            daily_high_level.delete()
+            daily_low_level.delete()
+            daily_low_level.delete()
+
+        if session.isfirstbar_regular
+            daily_range_time := time
+            daily_high_range := draw_range_ln(daily_range_time, time, high)
+            daily_high_level := draw_level_ln(time, high)
+            daily_low_range := draw_range_ln(daily_range_time, time, low)
+            daily_low_level := draw_level_ln(time, low)
+
+        if session.ismarket
+            if high > daily_high_level.get_y1()
+                daily_high_range.set_xy1(daily_range_time, high)
+                daily_high_range.set_xy2(time, high)
+                daily_high_level.set_xy1(time, high)
+                daily_high_level.set_xy2(time + 1, high)
+
+            if low < daily_low_level.get_y1()
+                daily_low_range.set_xy1(daily_range_time, low)
+                daily_low_range.set_xy2(time, low)
+                daily_low_level.set_xy1(time, low)
+                daily_low_level.set_xy2(time + 1, low)
+
+should_plot_daily = daily_levels_enabled and barstate.islast and not session.ispremarket
+plot(should_plot_daily ? daily_high_level.get_y1() : na, "HOD", color.new(color.gray, 100))
+plot(should_plot_daily ? daily_low_level.get_y1() : na, "LOD", color.new(color.gray, 100))
+
+// --------------------------------------------------------------------------------------------------------------------
+// PREMARKET HIGH & LOW
+//
+// Hightest valid timeframe?                        < 1D.
+// Requires higher timeframes to look back?         No (requires computing on sub-daily bars).
+// Range begins at a known bar?                     Yes (today's premarket)
+// Level is set only at the start of the range?     No  (can be set at any point in today's premarket).
+// Level stops being set past a certain point?      Yes (end of today's premarket).
+// Level can be set in real time?                   Yes (during today's premarket).
+// Redraw of range is needed later?                 Yes (when a new premarket begins).
+// --------------------------------------------------------------------------------------------------------------------
+var int range_bar_idx   = na
+var float pmh           = na
+var int pmh_bar_idx     = na
+var float pml           = na
+var int pml_bar_idx     = na
+
+if premarket_levels_enabled
+    // When the beginning of today is reached, store the bar index here as a variable to reference when we should
+    if is_beginning_of_today()
+        range_bar_idx := bar_index
+        pmh := na
+        pml := na
+
+    if is_today and session.ispremarket
+        if high > pmh or na(pmh)
+            pmh := high
+            pmh_bar_idx := bar_index
+        if low < pml or na(pml)
+            pml := low
+            pml_bar_idx := bar_index
+
+    var line pmh_range_ln = if not na(pmh_bar_idx)
+        draw_range_ln(range_bar_idx, pmh_bar_idx, pmh, color.yellow, xloc=xloc.bar_index)
+
+    var line pmh_ln = if not na(pmh)
+        draw_level_ln(pmh_bar_idx, pmh, color.yellow, xloc=xloc.bar_index)
+
+    var line pml_range_ln = if not na(pml_bar_idx)
+        draw_range_ln(range_bar_idx, pml_bar_idx, pml, color.yellow, xloc=xloc.bar_index)
+
+    var line pml_ln = if not na(pml)
+        draw_level_ln(pml_bar_idx, pml, color.yellow, xloc=xloc.bar_index)
+
+    // Update the premarket lines when either a redraw is needed (a new day occurs), or when a new premarket level is set.
+    if is_beginning_of_today() or pmh > pmh_ln.get_y1()
+        pmh_ln.set_xy1(pmh_bar_idx, pmh)
+        pmh_ln.set_xy2(pmh_bar_idx + 1, pmh)
+
+        pmh_range_ln.set_xy1(range_bar_idx, pmh)
+        pmh_range_ln.set_xy2(pmh_bar_idx, pmh)
+
+    // Update the premarket lines when either a redraw is needed (a new day occurs), or when a new premarket level is set.
+    if is_beginning_of_today() or pml < pml_ln.get_y1()
+        pml_ln.set_xy1(pml_bar_idx, pml)
+        pml_ln.set_xy2(pml_bar_idx + 1, pml)
+
+        pml_range_ln.set_xy1(range_bar_idx, pml)
+        pml_range_ln.set_xy2(pml_bar_idx, pml)
+
+plot(premarket_levels_enabled and barstate.islast ? pmh : na, "PMH", color.new(color.yellow, 100))
+plot(premarket_levels_enabled and barstate.islast ? pml : na, "PML", color.new(color.yellow, 100))
+
+// --------------------------------------------------------------------------------------------------------------------
+// PREVIOUS DAY HIGH AND LOW
+//
+// Highest valid timeframe?                         < 1D.
+// Requires higher timeframes to look back?         No (but can be computed on daily bars).
+// Range begins at a known bar?                     Yes (yesterday's regular trading hours)
+// Level is set only at the start of the range?     No (can be set at any point in yesterday's regular trading hours).
+// Level stops being set past a certain point?      Yes (end of yesterday's regular trading hours).
+// Level can be set in real time?                   No (always references a value in time from yesterday).
+// Redraw of range is needed later?                 Yes (when a new premarket begins).
+// --------------------------------------------------------------------------------------------------------------------
+var int pd_range_time       = na
+var float pdh               = na
+var float next_pdh          = na
+var int pdh_bar_time        = na
+var int next_pdh_bar_time   = na
+var float pdl               = na
+var float next_pdl          = na
+var int pdl_bar_time        = na
+var int next_pdl_bar_time   = na
+
+if previous_day_levels_enabled
+    if timeframe.change("D")
+        pdh             := next_pdh
+        pdh_bar_time    := next_pdh_bar_time
+        next_pdh        := na
+        pdl             := next_pdl
+        pdl_bar_time    := next_pdl_bar_time
+        next_pdl        := na
+
+    if session.isfirstbar_regular
+        pd_range_time := time
+
+    if session.ismarket
+        if high > next_pdh or na(next_pdh)
+            next_pdh := high
+            next_pdh_bar_time := time
+        if low < next_pdl or na(next_pdl)
+            next_pdl := low
+            next_pdl_bar_time := time
+
+    var line pdh_range_ln = if na(pd_range_time)
+        line.new(pd_range_time, pdh, pdh_bar_time, pdh, xloc=xloc.bar_time, color=color.new(color.gray, 60), style=line.style_dotted)
+
+    var line pdh_ln = if na(pdh_bar_time)
+        line.new(pdh_bar_time, pdh, pdh_bar_time + 1, pdh, xloc=xloc.bar_time, extend=extend.right, color=color.gray, style=line.style_dotted)
+
+    var line pdl_range_ln = if na(pd_range_time)
+        line.new(pd_range_time, pdl, pdl_bar_time, pdl, xloc=xloc.bar_time, color=color.new(color.gray, 60), style=line.style_dotted)
+
+    var line pdl_ln = if na(pdl_bar_time)
+        line.new(pdl_bar_time, pdl, pdl_bar_time + 1, pdl, xloc=xloc.bar_time, extend=extend.right, color=color.gray, style=line.style_dotted)
+
+    if timeframe.change("D")
+        pdh_range_ln.set_xy1(pd_range_time, pdh)
+        pdh_range_ln.set_xy2(pdh_bar_time, pdh)
+        pdl_range_ln.set_xy1(pd_range_time, pdl)
+        pdl_range_ln.set_xy2(pdl_bar_time, pdl)
+        pdh_ln.set_xy1(pdh_bar_time, pdh)
+        pdh_ln.set_xy2(pdh_bar_time + 1, pdh)
+        pdl_ln.set_xy1(pdl_bar_time, pdl)
+        pdl_ln.set_xy2(pdl_bar_time + 1, pdl)
+
+plot(previous_day_levels_enabled and barstate.islast ? pdh : na, "PDH", color.new(color.gray, 100))
+plot(previous_day_levels_enabled and barstate.islast ? pdl : na, "PDL", color.new(color.gray, 100))
+
+// --------------------------------------------------------------------------------------------------------------------
+// PREVIOUS DAY CLOSE
+//
+// Highest valid timeframe?                         .
+// Requires higher timeframes to look back?
+// Range begins at a known bar?
+// Level is set only at the start of the range?
+// Level stops being set past a certain point?
+// Level can be set in real time?
+// Redraw of range is needed later?
+// --------------------------------------------------------------------------------------------------------------------
+var float previous_day_close = na
+var float pdc_level = na
+
+// if is_yesterday and session.islastbar_regular
+//     // log.info("Last bar regular")
+//     previous_day_close := close
+
+// var line previous_day_close_line = if not na(previous_day_close) and is_yesterday and session.islastbar_regular
+//     // log.info("Creating new line")
+//     line.new(bar_index, previous_day_close, bar_index+1, previous_day_close, extend=extend.right, color=color.orange, style=line.style_dotted)
+
+// [pdc, pdc1, tc, tc1] = request.security(syminfo.tickerid, "D", [close, close[1], bar_index, bar_index[1]], lookahead=barmerge.lookahead_on)
+// pdc_level := session.ispremarket ? pdc : pdc1
+// pdc_tc = session.ispremarket ? tc : tc1
+
+// log.info("{0} {1} {2} {3}", pdc, pdc1, tc, tc1)
+
+// var line pdc_line = line.new(
+//      x1 = pdc_tc,
+//      y1 = pdc_level,
+//      x2 = pdc_tc + 1,
+//      y2 = pdc_level,
+//      extend = extend.right,
+//      color = color.gray,
+//      style = line.style_dotted)
+
+// if is_beginning_of_yesterday() and session.islastbar
+//     pdc_line.set_x1(pdc_tc)
+//     pdc_line.set_x2(pdc_tc + 1)
+//     pdc_line.set_y1(pdc_level)
+//     pdc_line.set_y2(pdc_level)
+
+// plot(pdc_level, title="PDC", color=color.new(color.gray, 100), linewidth=1)
+
+// --------------------------------------------------------------------------------------------------------------------
+// 52 WEEK HIGH AND LOW
+//
+// Highest valid timeframe?                         1 month.
+// Requires higher timeframes to look back?         Yes (weekly bars needed).
+// Range begins at a known bar?                     Yes (52 weeks before the current bar).
+// Level is set only at the start of the range?
+// Level stops being set past a certain point?
+// Level can be set in real time?
+// Redraw of range is needed later?
+// --------------------------------------------------------------------------------------------------------------------
+fifty_two_wks_ago = time - timeframe.in_seconds("52W") * 1000
+[fifty_two_wk_low, fifty_two_wk_low_bar_time, fifty_two_wk_high, fifty_two_wk_high_bar_time] = request.security(
+     syminfo.tickerid,
+     "W",
+     get_fifty_two_week_extremes())
+
+if fifty_two_week_levels_enabled
+    var line fifty_two_wk_range_low_ln = if barstate.islast
+        draw_range_ln(fifty_two_wks_ago, fifty_two_wk_low_bar_time, fifty_two_wk_low)
+
+    var line fifty_two_wk_low_ln = if barstate.islast
+        draw_level_ln(fifty_two_wk_low_bar_time, fifty_two_wk_low)
+
+    var line fifty_two_wk_range_high_ln = if barstate.islast
+        draw_range_ln(fifty_two_wks_ago, fifty_two_wk_high_bar_time, fifty_two_wk_high)
+
+    var line fifty_two_wk_high_ln = if barstate.islast
+        draw_level_ln(fifty_two_wk_high_bar_time, fifty_two_wk_high)
+
+    if not na(fifty_two_wk_range_low_ln)
+        fifty_two_wk_range_low_ln.set_xy1(fifty_two_wks_ago, fifty_two_wk_low)
+        fifty_two_wk_range_low_ln.set_xy2(fifty_two_wk_low_bar_time, fifty_two_wk_low)
+
+    if fifty_two_wk_low != fifty_two_wk_low_ln.get_y1()
+        fifty_two_wk_low_ln.set_xy1(fifty_two_wk_low_bar_time, fifty_two_wk_low)
+        fifty_two_wk_low_ln.set_xy2(fifty_two_wk_low_bar_time + 1, fifty_two_wk_low)
+
+    if not na(fifty_two_wk_range_high_ln)
+        fifty_two_wk_range_high_ln.set_xy1(fifty_two_wks_ago, fifty_two_wk_high)
+        fifty_two_wk_range_high_ln.set_xy2(fifty_two_wk_high_bar_time, fifty_two_wk_high)
+
+    if fifty_two_wk_high != fifty_two_wk_high_ln.get_y1()
+        fifty_two_wk_high_ln.set_xy1(fifty_two_wk_high_bar_time, fifty_two_wk_high)
+        fifty_two_wk_high_ln.set_xy2(fifty_two_wk_high_bar_time + 1, fifty_two_wk_high)
+
+plot(fifty_two_week_levels_enabled and barstate.islast ? fifty_two_wk_high : na, "52WH", color.new(color.gray, 100))
+plot(fifty_two_week_levels_enabled and barstate.islast ? fifty_two_wk_low : na, "52WL", color.new(color.gray, 100))
+
+// --------------------------------------------------------------------------------------------------------------------
+// ALL TIME HIGH AND LOW
+//
+// Highest valid timeframe?                         .
+// Requires higher timeframes to look back?
+// Range begins at a known bar?
+// Level is set only at the start of the range?
+// Level stops being set past a certain point?
+// Level can be set in real time?
+// Redraw of range is needed later?
+// --------------------------------------------------------------------------------------------------------------------
+get_highest() =>
+    var float highest = na
+    var int highest_time = na
+    if high > highest or na(highest)
+        highest := high
+        highest_time := time
+    [highest, highest_time]
+
+[ath, ath_time] = request.security(syminfo.tickerid, "D", get_highest(), lookahead=barmerge.lookahead_on)
+
+if all_time_levels_enabled
+    var line ath_line = line.new(
+     x1 = ath_time,
+     y1 = ath,
+     x2 = ath_time + timeframe.in_seconds("1D") * 1000,
+     y2 = ath,
+     xloc = xloc.bar_time,
+     extend = extend.right,
+     color = color.gray,
+     style = line.style_dotted)
+
+    ath_line.set_x1(ath_time)
+    ath_line.set_x2(ath_time + timeframe.in_seconds("1D") * 1000)
+    ath_line.set_y1(ath)
+    ath_line.set_y2(ath)
+
+plot(all_time_levels_enabled and barstate.islast ? ath : na, "ATH", color.new(color.gray, 100))
