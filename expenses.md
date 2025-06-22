@@ -39,15 +39,16 @@ Ordered from Amazon US. Total cost: NZ$234.26 (US$135.12)
 
 Medium term plan is to use the following tools while I establish proof of profitability:
 
-- DAS Trader Pro (Deluxe Plan, $150/month), with OTC/Options swapped for ARCA Book.
-- TradingView Premium
-	- Including U.S. Stock Markets bundle
+- DAS Trader Pro (Deluxe Plan), with OTC/options data swapped for the ARCABook feed (this swap is free of charge)
+- TradingView Premium.
+	- Including U.S. Stock Markets bundle.
+- Parallels Desktop for Mac to run DAS Trader Pro.
 
 Once profitability has been established and a track record built for several months, I could consider a switch to LightSpeed trader, whilst still maintaining a TradingView premium subscription for charts.
 
-- Lightspeed Trader (Reg-T Margin Account)
-- TradingView Premium
-	- Including U.S. Stock Markets bundle
+- Lightspeed Trader (Reg-T Margin Account).
+- TradingView Premium.
+	- Including U.S. Stock Markets bundle.
 
 ### MotiveWave
 
@@ -59,7 +60,7 @@ Subscribed to the _Pro_ version for one month to test its functionality. While t
 
 ### DAS Trader Pro
 
-Subscribed to the monthly Deluxe Edition
+Subscribed to the Deluxe Edition. This is a monthly subscription.
 
 | Service                       | Date Charged | Paid (USD) | Paid (NZD) |
 | ----------------------------- | ------------ | ---------- | ---------- |
@@ -75,6 +76,14 @@ Subscribed to the -60% off end of trial offer, paying for TradingView Premium an
 | US Stock Markets bundle |              | $119.40    |            |
 | GST                     |              | $66.49     |            |
 | Total                   | 11 June 2025 | $509.77    | $857.09    |
+
+### Parallels Desktop for Mac
+
+Necessary to run DAS Trader Pro. This is an annual subscription.
+
+| Service                                              | Date Charged | Paid (AUD) | Paid (NZD) |
+| ---------------------------------------------------- | ------------ | ---------- | ---------- |
+| Parallels Desktop for Mac Standard (Student Edition) | 22 June 2025 | $62.60     | $68.91     |
 
 ## Market Data
 
